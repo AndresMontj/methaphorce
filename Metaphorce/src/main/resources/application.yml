@@ -1,4 +1,9 @@
 server:
+  ssl:
+    key-store: /ssl/metaphorce/localhost.p12
+    key-store-password: JR1L0aX0
+    key-store-type: pkcs12
+    key-password: JR1L0aX0
   port: 8082
 spring:
   application:
@@ -40,7 +45,12 @@ management:
       application: ${spring.application.name}
 eureka:
   instance:
-    hostname: 192.168.3.40
+    hostName: 192.168.3.40
+    nonSecurePortEnabled: false
+    securePortEnabled: true
+    statusPageUrl: 'https://${eureka.instance.hostName}:${server.port}/actuator/info'
+    healthCheckUrl: 'https://${eureka.instance.hostName}:${server.port}/actuator/health'
+    homePageUrl: 'https://${eureka.instance.hostName}:${server.port}/'
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 2
     instance-id: ${spring.application.name}:${random.uuid}
@@ -53,4 +63,4 @@ logging:
   level:
     org:
       springframework:
-        security: DEBUG
+        security: INFO
