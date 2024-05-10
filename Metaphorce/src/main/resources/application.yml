@@ -1,0 +1,56 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: MetaphorceService
+  datasource:
+    url: jdbc:postgresql://192.168.3.40:5432/spring
+    username: spring
+    password: s3cr3t
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://192.168.3.40:9091/realms/metaphorce
+          jwk-set-uri: http://192.168.3.40:9091/realms/metaphorce/protocol/openid-connect/certs
+      client:
+        registration:
+          keycloack:
+            client-id: login-app
+            authorization-grant-type: authorization_code
+            scope: openid
+        provider:
+          keycloack:
+            issuer-uri: http://192.168.3.40:9091/realms/metaphorce
+            user-name-attribute: preferred_username
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, prometheus, info
+  metrics:
+    tags:
+      application: ${spring.application.name}
+eureka:
+  instance:
+    hostname: 192.168.3.40
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+    instance-id: ${spring.application.name}:${random.uuid}
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone : http://192.168.3.40:8761/eureka/
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG

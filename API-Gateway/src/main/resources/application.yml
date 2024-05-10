@@ -1,0 +1,42 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: API-Gateway
+  cloud:
+    gateway:
+        default-filters: TokenRelay
+        routes:
+        - id: METAPHORCESERVICE
+          uri: lb://METAPHORCESERVICE
+          predicates:
+          - Path=/api/**
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://192.168.3.40:9091/realms/metaphorce
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, prometheus, info
+  metrics:
+    tags:
+      application: ${spring.application.name}
+eureka:
+  instance:
+    hostname: 192.168.3.40
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+    instance-id: ${spring.application.name}:${random.uuid}
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone : http://192.168.3.40:8761/eureka/
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG

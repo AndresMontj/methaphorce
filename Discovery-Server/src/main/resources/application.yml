@@ -1,0 +1,19 @@
+eureka:
+  instance:
+    hostname: 192.168.3.40
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+server:
+  port: 8761
+spring:
+  application:
+    name: Discovery-Server
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, prometheus, info
+  metrics:
+    tags:
+      application: ${spring.application.name}
