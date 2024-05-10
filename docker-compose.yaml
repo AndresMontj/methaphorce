@@ -116,6 +116,9 @@ services:
       - 8090:8090
     networks:
       - front-tier
+    depends_on:
+      - discovery-server
+      - keycloak
   
   discovery-server:
     container_name: discovery-server
