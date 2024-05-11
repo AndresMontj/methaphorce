@@ -59,7 +59,8 @@ services:
       - 8080:8080
     networks:
       - back-tier
-    restart: always
+    restart: unless-stopped
+    privileged: true
     deploy:
       mode: global
 
