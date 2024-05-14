@@ -39,8 +39,7 @@ public class User extends RepresentationModel<User> {
 
 	@JsonCreator
 	public User(@JsonProperty("username") @NotBlank @Size(max = 20) String username,
-			@JsonProperty("email") @NotBlank @Size(max = 50) @Email String email,
-			@JsonProperty("password") @NotBlank @Size(max = 120) String password) {
+			@JsonProperty("email") @NotBlank @Size(max = 50) @Email String email) {
 		super();
 		this.username = username;
 		this.email = email;

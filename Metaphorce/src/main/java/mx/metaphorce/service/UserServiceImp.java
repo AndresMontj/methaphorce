@@ -44,20 +44,15 @@ public class UserServiceImp implements UserService {
 
 	@Override
 	public User updateUser(User user, Long userId) {
-		Optional<User> userOp = userRepository.findById(userId);
-		if (userOp.isPresent()) {
-			User userDB = userOp.get();
-			if (Objects.nonNull(user.getUsername()) && !"".equalsIgnoreCase(user.getUsername())) {
-				userDB.setUsername(user.getUsername());
-			}
-
-			if (Objects.nonNull(user.getEmail()) && !"".equalsIgnoreCase(user.getEmail())) {
-				userDB.setEmail(user.getEmail());
-			}
-			return userRepository.save(userDB);
-		}else {
-			return null;
+		User userDB = userRepository.findById(userId).get();
+		if (Objects.nonNull(user.getUsername()) && !"".equalsIgnoreCase(user.getUsername())) {
+			userDB.setUsername(user.getUsername());
 		}
+
+		if (Objects.nonNull(user.getEmail()) && !"".equalsIgnoreCase(user.getEmail())) {
+			userDB.setEmail(user.getEmail());
+		}
+		return userRepository.save(userDB);
 	}
 
 	@Override
