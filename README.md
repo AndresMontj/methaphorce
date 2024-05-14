@@ -5,18 +5,18 @@
 A step by step series of examples that tell you how to get a development environment running.
 
 #### Step 1: Clone the repository
-git clone https://github.com/AndresMontj/methaphorce.git
+  git clone https://github.com/AndresMontj/methaphorce.git
 
 #### Step 2: Navigate to the project directory
-cd methaphorce
+  cd methaphorce
 
 #### Step 3: Install dependencies
-cd Metaphorce && mvn clean compile package -DskipTests=true && cd ..
-cd API-Gateway && mvn clean compile package -DskipTests=true && cd ..
-cd Discovery-Server && mvn clean compile package -DskipTests=true && cd ..
+  cd Metaphorce && mvn clean compile package -DskipTests=true && cd ..
+  cd API-Gateway && mvn clean compile package -DskipTests=true && cd ..
+  cd Discovery-Server && mvn clean compile package -DskipTests=true && cd ..
 
 #### Step 4: Run the application locally
-docker-compose -f docker-compose.yaml up -d
+  docker-compose -f docker-compose.yaml up -d
 
 --enjoy ;)
 
