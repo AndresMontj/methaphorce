@@ -11,9 +11,9 @@ A step by step series of examples that tell you how to get a development environ
   cd methaphorce
 
 #### Step 3: Install dependencies
-  cd Metaphorce && mvn clean compile package -DskipTests=true && cd ..
-  cd API-Gateway && mvn clean compile package -DskipTests=true && cd ..
-  cd Discovery-Server && mvn clean compile package -DskipTests=true && cd ..
+  cd Metaphorce && mvn clean compile package -DskipTests=true && cd .. <br>
+  cd API-Gateway && mvn clean compile package -DskipTests=true && cd .. <br>
+  cd Discovery-Server && mvn clean compile package -DskipTests=true && cd ..<br>
 
 #### Step 4: Run the application locally
   docker-compose -f docker-compose.yaml up -d
