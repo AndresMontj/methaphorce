@@ -15,9 +15,9 @@ A step by step series of examples that tell you how to get a development environ
 ```
 #### Step 3: Install dependencies
 ```sh
-  cd Metaphorce && mvn clean compile package -DskipTests=true && cd .. <br>
-  cd API-Gateway && mvn clean compile package -DskipTests=true && cd .. <br>
-  cd Discovery-Server && mvn clean compile package -DskipTests=true && cd ..<br>
+  cd Metaphorce && mvn clean compile package -DskipTests=true && cd .. 
+  cd API-Gateway && mvn clean compile package -DskipTests=true && cd .. 
+  cd Discovery-Server && mvn clean compile package -DskipTests=true && cd ..
 ```
 #### Step 4: Run the application locally
 ```sh
