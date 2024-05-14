@@ -22,9 +22,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
+import mx.metaphorce.controllers.exceptions.UserNotFoundException;
 import mx.metaphorce.entity.User;
 import mx.metaphorce.entity.UserModelAssembler;
-import mx.metaphorce.service.UserService;
+import mx.metaphorce.service.UserServiceImp;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -34,7 +35,7 @@ public class UserController {
 
 	// Annotation
 	@Autowired
-	private UserService userService;
+	private UserServiceImp userService;
 
 	@Autowired
 	private UserModelAssembler userModelAssembler;
@@ -66,7 +67,7 @@ public class UserController {
 		if (user.isPresent()) {
 			return new ResponseEntity<>(userModelAssembler.toModel(user.get()), HttpStatus.OK);
 		} else {
-			return ResponseEntity.notFound().build();
+			throw new UserNotFoundException("Not found user with ID " + userId);
 		}
 	}
 
@@ -79,7 +80,7 @@ public class UserController {
 			return new ResponseEntity<>(userModelAssembler.toModel(userService.updateUser(user, userId)),
 					HttpStatus.OK);
 		} else {
-			return ResponseEntity.notFound().build();
+			throw new UserNotFoundException("Not found user with ID " + userId);
 		}
 	}
 
@@ -92,7 +93,7 @@ public class UserController {
 			userService.deleteUserById(userId);
 			return ResponseEntity.ok("{operation : Deleted Successfully}");
 		} else {
-			return ResponseEntity.notFound().build();
+			throw new UserNotFoundException("Not found user with ID " + userId);
 		}
 	}
 }
