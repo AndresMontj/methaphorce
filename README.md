@@ -1,6 +1,14 @@
 <h1 align="center">Hi 👋, I'm Andres Montejo</h1>
 <h3 align="center">A passionate developer from Mexico</h3>
 
+#git clone https://github.com/AndresMontj/methaphorce.git
+#cd methaphorce
+#cd Metaphorce && mvn clean compile package -DskipTests=true && cd ..
+#cd API-Gateway && mvn clean compile package -DskipTests=true && cd ..
+#cd Discovery-Server && mvn clean compile package -DskipTests=true && cd ..
+#docker-compose -f docker-compose.yaml up -d
+--enjoy ;)
+
 # REST API books
 Collection of useful books related to REST API architecture
 
@@ -19,22 +27,6 @@ how to build them by Phil Sturgeon - 2013/2014
 * [The Little Book on REST Services](https://tdonker.nl/restapibooks/The-Little-Book-on-REST-Services.pdf) Kenneth Lange - 2016
 * [Web API Design: The Missing Link - Best Practices for Crafting Interfaces that Developers Love](https://tdonker.nl/restapibooks/Web-design-the-missing-link-ebook-2016-11.pdf) Apigee - 2018
 * [Pro RESTful APIs - Design, Build and Integrate with REST, JSON, XML and JAX-RS](https://tdonker.nl/restapibooks/Pro-RESTful-APIs.pdf) Sanjay Patni (Apress) - 2017
-
-git clone https://github.com/AndresMontj/methaphorce.git
-Cloning into 'methaphorce'...
-remote: Enumerating objects: 243, done.
-remote: Counting objects: 100% (243/243), done.
-remote: Compressing objects: 100% (169/169), done.
-remote: Total 243 (delta 75), reused 167 (delta 32), pack-reused 0
-Receiving objects: 100% (243/243), 139.82 KiB | 691.00 KiB/s, done.
-Resolving deltas: 100% (75/75), done.
-cd methaphorce
-cd Metaphorce && mvn clean compile package -DskipTests=true && cd ..
-cd API-Gateway && mvn clean compile package -DskipTests=true && cd ..
-cd Discovery-Server && mvn clean compile package -DskipTests=true && cd ..
-docker-compose -f docker-compose.yaml up -d
---enjoy ;)
-
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
