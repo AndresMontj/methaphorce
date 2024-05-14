@@ -1,12 +1,23 @@
 <h1 align="center">Hi 👋, I'm Andres Montejo</h1>
 <h3 align="center">A passionate developer from Mexico</h3>
 
-#git clone https://github.com/AndresMontj/methaphorce.git
-#cd methaphorce
-#cd Metaphorce && mvn clean compile package -DskipTests=true && cd ..
-#cd API-Gateway && mvn clean compile package -DskipTests=true && cd ..
-#cd Discovery-Server && mvn clean compile package -DskipTests=true && cd ..
-#docker-compose -f docker-compose.yaml up -d
+### Installing
+A step by step series of examples that tell you how to get a development environment running.
+
+#### Step 1: Clone the repository
+git clone https://github.com/AndresMontj/methaphorce.git
+
+#### Step 2: Navigate to the project directory
+cd methaphorce
+
+#### Step 3: Install dependencies
+cd Metaphorce && mvn clean compile package -DskipTests=true && cd ..
+cd API-Gateway && mvn clean compile package -DskipTests=true && cd ..
+cd Discovery-Server && mvn clean compile package -DskipTests=true && cd ..
+
+#### Step 4: Run the application locally
+docker-compose -f docker-compose.yaml up -d
+
 --enjoy ;)
 
 # REST API books
