@@ -1,6 +1,22 @@
 <h1 align="center">Hi 👋, I'm Andres Montejo</h1>
 <h3 align="center">A passionate developer from Mexico</h3>
 
+git clone https://github.com/AndresMontj/methaphorce.git
+Cloning into 'methaphorce'...
+remote: Enumerating objects: 243, done.
+remote: Counting objects: 100% (243/243), done.
+remote: Compressing objects: 100% (169/169), done.
+remote: Total 243 (delta 75), reused 167 (delta 32), pack-reused 0
+Receiving objects: 100% (243/243), 139.82 KiB | 691.00 KiB/s, done.
+Resolving deltas: 100% (75/75), done.
+cd methaphorce
+cd Metaphorce && mvn clean compile package -DskipTests=true && cd ..
+cd API-Gateway && mvn clean compile package -DskipTests=true && cd ..
+cd Discovery-Server && mvn clean compile package -DskipTests=true && cd ..
+docker-compose -f docker-compose.yaml up -d
+--enjoy ;) (edited) 
+
+
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 <a href="https://linkedin.com/in/https://www.linkedin.com/in/andresmontj/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/andresmontj/" height="30" width="40" /></a>
